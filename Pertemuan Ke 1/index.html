@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul 1 - Praktikum HTML</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f5f6fa;
+            --container-bg: #ffffff;
+            --text-main: #2f3640;
+            --text-muted: #718093;
+            --primary: #0097e6;
+            --border: #dcdde1;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            background-color: var(--container-bg);
+            max-width: 900px;
+            width: 100%;
+            padding: 50px 60px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Roboto Slab', serif;
+            color: #273c75;
+            margin-top: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            margin-top: 0;
+            color: #2f3640;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            display: block;
+            font-size: 1.1em;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            background-color: #f8f9fa;
+            padding: 20px 20px 20px 40px;
+            border-left: 4px solid var(--primary);
+            border-radius: 4px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        img {
+            display: block;
+            margin: 30px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        th, td {
+            border: 1px solid var(--border);
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f1f2f6;
+            color: #2f3640;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .divider {
+            height: 2px;
+            background-color: var(--border);
+            margin: 60px 0;
+        }
+
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            border-top: 1px dashed var(--border);
+            padding-top: 30px;
+            color: var(--text-muted);
+            font-size: 1em;
+        }
+
+        .footer strong {
+            color: var(--text-main);
+            display: inline-block;
+            margin-top: 5px;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- TASK 1 content -->
+        <h1>LOREM IPSUM</h1>
+        <span class="subtitle">
+            "NEQUE PORRO QUISQUAM EST QUI DOLOREM IPSUM QUIA DOLOR SIT AMET, CONSECTETUR, ADIPISCI VELIT..."<br><br>
+            "THERE IS NO ONE WHO LOVES PAIN ITSELF, WHO SEEKS AFTER IT AND WANTS TO HAVE IT, SIMPLY BECAUSE IT IS PAIN..."
+        </span>
+
+        <h3>WHAT IS LOREM IPSUM?</h3>
+        <p>Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of letraset sheets containing lorem ipsum passages, and more recently with desktop publishing software like aldus pagemaker including versions of lorem ipsum.</p>
+
+        <h3>WHY DO WE USE IT?</h3>
+        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using lorem ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'content here, content here', making it look like readable english. Many desktop publishing packages and web page editors now use lorem ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+
+        <h3>WHERE DOES IT COME FROM?</h3>
+        <p>Contrary to popular belief, lorem ipsum is not simply random text. It has roots in a piece of classical latin literature from 45 bc, making it over 2000 years old. Richard mcclintock, a latin professor at hampden-sydney college in virginia, looked up one of the more obscure latin words, consectetur, from a lorem ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem ipsum comes from sections 1.10.32 and 1.10.33 of "de finibus bonorum et malorum" (the extremes of good and evil) by cicero, written in 45 bc. This book is a treatise on the theory of ethics, very popular during the renaissance. The first line of lorem ipsum, "lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+
+        <p>The standard chunk of lorem ipsum used :</p>
+        <ul>
+            <li>Since the 1500s is reproduced below for those interested.</li>
+            <li>Sections 1.10.32 and 1.10.33 from "de finibus bonorum et malorum" by cicero are also reproduced in their exact original form,</li>
+            <li>Accompanied by english versions from the 1914 translation by h. Rackham.</li>
+        </ul>
+
+        <h3>WHERE CAN I GET SOME?</h3>
+        <p>There are many variations of passages of lorem ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of lorem ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the lorem ipsum generators on the internet tend to repeat predefined chunks as necessary, making this the first true generator on the internet. It uses a dictionary of over 200 latin words, combined with a handful of model sentence structures, to generate lorem ipsum which looks reasonable. The generated lorem ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+
+        <div class="divider"></div>
+
+        <!-- TASK 2 content specific portions -->
+        <h2 style="text-align: center;">Element HTML Praktikum</h2>
+        
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Red_Apple.jpg/200px-Red_Apple.jpg" alt="Apple Placeholder" width="120">
+
+        <h3>Colspan and rowspan</h3>
+
+        <h4>Cell that spans two columns:</h4>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th colspan="2">Phone</th>
+            </tr>
+            <tr>
+                <td>Espio Chameleon</td>
+                <td>Espio@chameleon.com</td>
+                <td>123-45-678</td>
+                <td>212-00-546</td>
+            </tr>
+        </table>
+
+        <h4>Cell that spans two rows:</h4>
+        <table>
+            <tr>
+                <th>Name:</th>
+                <td>Espio Chameleon</td>
+            </tr>
+            <tr>
+                <th>Email:</th>
+                <td>Espio@chameleon.com</td>
+            </tr>
+            <tr>
+                <th rowspan="2" valign="top">Phone:</th>
+                <td>123-45-678</td>
+            </tr>
+            <tr>
+                <td>212-00-546</td>
+            </tr>
+        </table>
+
+        <div class="footer">
+            &copy; 2025 Praktikum Pemrograman Web<br>
+            <strong>Aditya Dwi Nugroho | 25.01.5252</strong>
+        </div>
+    </div>
+</body>
+</html>
