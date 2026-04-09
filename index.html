@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tugas Pemrograman Web</title>
+    <!-- Modern Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root { --bg-color: #f8fafc; --surface-color: #ffffff; --text-primary: #0f172a; --text-secondary: #64748b; --brand-color: #3b82f6; --brand-hover: #2563eb; --border-color: #e2e8f0; --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05); --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); --radius-md: 0.5rem; --radius-lg: 0.75rem; }
@@ -34,7 +35,26 @@
 
         <main class="card">
             <ul class="link-list" id="directory-list">
-                <div class="loading">Memuat daftar tugas dari Github...</div>
+                
+                <li class="link-item">
+                    <a href="Pertemuan Ke 1/index.html">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <span class="icon">📁</span>
+                            Pertemuan Ke 1
+                        </div>
+                        <span class="arrow">➜</span>
+                    </a>
+                </li>
+                <li class="link-item">
+                    <a href="Pertemuan Ke 2/index.html">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <span class="icon">📁</span>
+                            Pertemuan Ke 2
+                        </div>
+                        <span class="arrow">➜</span>
+                    </a>
+                </li>
+
             </ul>
         </main>
 
@@ -44,6 +64,7 @@
     </div>
 
     <script>
+        // Use Javascript fetch to append NEW directories automatically!
         async function fetchDirectories() {
             const repo = "AdityaDwiNugroho/PemrogramanWeb_AMIKOM"; 
             const apiURL = "https://api.github.com/repos/" + repo + "/contents";
@@ -51,47 +72,35 @@
 
             try {
                 const response = await fetch(apiURL);
-                if (!response.ok) throw new Error("Gagal mengambil data");
+                if (!response.ok) return; // Silent fail if offline
                 const data = await response.json();
 
-                // Filter hanya yang tipenya directory dan bukan folder tersembunyi/git
-                const folders = data.filter(item => item.type === "dir" && !item.name.startsWith("."));
-                
-                listElement.innerHTML = '';
+                // Get current folders shown statically to avoid duplicates
+                const existingText = listElement.innerText;
 
-                if (folders.length === 0) {
-                    listElement.innerHTML = '<div class="loading">Belum ada folder tugas.</div>';
-                    return;
-                }
-
-                folders.forEach(folder => {
-                    // encode path: "Pertemuan Ke 1" menjadi "Pertemuan%20Ke%201/index.html"
-                    const folderPath = encodeURIComponent(folder.name) + "/index.html"; 
-                    const li = document.createElement("li");
-                    li.className = "link-item";
-                    li.innerHTML = \
-                        <a href="\">
-                            <div style="display: flex; align-items: center; gap: 1rem;">
-                                <span class="icon">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
-                                    </svg>
-                                </span>
-                                \
-                            </div>
-                            <span class="arrow">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    <polyline points="12 5 19 12 12 19"></polyline>
-                                </svg>
-                            </span>
-                        </a>
-                    \;
-                    listElement.appendChild(li);
+                data.forEach(folder => {
+                    if (folder.type === "dir" && !folder.name.startsWith(".")) {
+                        // If it doesn't already exist in the list
+                        if (!existingText.includes(folder.name)) {
+                            const folderPath = encodeURIComponent(folder.name) + "/index.html"; 
+                            const li = document.createElement("li");
+                            li.className = "link-item";
+                            li.innerHTML = `
+                                <a href="${folderPath}">
+                                    <div style="display: flex; align-items: center; gap: 1rem;">
+                                        <span class="icon">📁</span>
+                                        ${folder.name}
+                                    </div>
+                                    <span class="arrow">➜</span>
+                                </a>
+                            `;
+                            listElement.appendChild(li);
+                        }
+                    }
                 });
 
             } catch (error) {
-                listElement.innerHTML = '<div class="loading" style="color:red">Terjadi kesalahan. Data folder tidak dapat dimuat.</div>';
+                console.error("Auto detect failed, using static list.");
             }
         }
 
