@@ -1,0 +1,178 @@
+:root {
+            --bg-color: #f7f4fc;
+            --container-bg: #ffffff;
+            --text-main: #2d2438;
+            --text-muted: #7d708a;
+            --primary: #502380;
+            --border: #e0d8e6;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            background-color: var(--container-bg);
+            max-width: 900px;
+            width: 100%;
+            padding: 50px 60px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Roboto Slab', serif;
+            color: var(--primary);
+            margin-top: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            margin-top: 0;
+            color: var(--text-main);
+        }
+
+        .subtitle {
+            text-align: center;
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            display: block;
+            font-size: 1.1em;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            background-color: #f8f9fa;
+            padding: 20px 20px 20px 40px;
+            border-left: 4px solid var(--primary);
+            border-radius: 4px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        img {
+            display: block;
+            margin: 30px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 25px;
+            margin-bottom: 45px;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border);
+        }
+
+        th, td {
+            border-bottom: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+            padding: 16px 20px;
+            text-align: left;
+            transition: background-color 0.2s ease;
+        }
+
+        /* Prevent double borders on edges */
+        tr th:last-child, tr td:last-child { border-right: none; }
+        
+        tr:last-child th, tr:last-child td { border-bottom: none; }
+
+        th {
+            background-color: #f5f0fa;
+            color: #2d2438;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+        }
+
+        td {
+            color: #4b3e57;
+            font-size: 0.95rem;
+        }
+
+        tr:nth-child(even) td {
+            background-color: #fbf9fc;
+        }
+
+        tr:hover td {
+            background-color: #f2eefa;
+        }
+
+        .divider {
+            height: 2px;
+            background-color: var(--border);
+            margin: 60px 0;
+        }
+
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            border-top: 1px dashed var(--border);
+            padding-top: 30px;
+            color: var(--text-muted);
+            font-size: 1em;
+        }
+
+        .footer strong {
+            color: var(--text-main);
+            display: inline-block;
+            margin-top: 5px;
+            font-size: 1.1em;
+        }
+
+        /* Toast Popup */
+        .toast {
+            position: fixed;
+            bottom: -100px;
+            right: 20px;
+            background: #2d2438;
+            color: #fff;
+            padding: 16px 24px;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transition: bottom 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 1000;
+            font-family: 'Inter', sans-serif;
+        }
+        .toast.show { bottom: 30px; }
+        .toast a {
+            background: #502380;
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 0.9em;
+            transition: background 0.2s;
+        }
+        .toast a:hover { background: #6a34a8; }

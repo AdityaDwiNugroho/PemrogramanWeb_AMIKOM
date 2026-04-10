@@ -4,135 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modul 1 - Praktikum HTML</title>
+    <link rel="icon" href="/favicon.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #f5f6fa;
-            --container-bg: #ffffff;
-            --text-main: #2f3640;
-            --text-muted: #718093;
-            --primary: #0097e6;
-            --border: #dcdde1;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            margin: 0;
-            padding: 40px 20px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .container {
-            background-color: var(--container-bg);
-            max-width: 900px;
-            width: 100%;
-            padding: 50px 60px;
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            border: 1px solid var(--border);
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Roboto Slab', serif;
-            color: #273c75;
-            margin-top: 40px;
-        }
-
-        h1 {
-            text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            margin-top: 0;
-            color: #2f3640;
-        }
-
-        .subtitle {
-            text-align: center;
-            font-style: italic;
-            color: var(--text-muted);
-            margin-bottom: 40px;
-            display: block;
-            font-size: 1.1em;
-            border-bottom: 2px solid var(--border);
-            padding-bottom: 30px;
-            line-height: 1.6;
-        }
-
-        p {
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        ul {
-            background-color: #f8f9fa;
-            padding: 20px 20px 20px 40px;
-            border-left: 4px solid var(--primary);
-            border-radius: 4px;
-        }
-
-        li {
-            margin-bottom: 10px;
-            line-height: 1.6;
-        }
-
-        img {
-            display: block;
-            margin: 30px auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            margin-bottom: 40px;
-        }
-
-        th, td {
-            border: 1px solid var(--border);
-            padding: 12px 15px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f1f2f6;
-            color: #2f3640;
-            font-weight: 600;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f8f9fa;
-        }
-
-        .divider {
-            height: 2px;
-            background-color: var(--border);
-            margin: 60px 0;
-        }
-
-        .footer {
-            margin-top: 50px;
-            text-align: center;
-            border-top: 1px dashed var(--border);
-            padding-top: 30px;
-            color: var(--text-muted);
-            font-size: 1em;
-        }
-
-        .footer strong {
-            color: var(--text-main);
-            display: inline-block;
-            margin-top: 5px;
-            font-size: 1.1em;
-        }
-    </style>
+    <link rel="stylesheet" href="/pertemuan-1/css/style.css?v=2">
 </head>
 <body>
     <div class="container">
+        <div style="margin-bottom: 20px;">
+            <a href="/" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: var(--primary); font-weight: 600; font-size: 0.95em;">
+                <span>&larr;</span> Back to Home
+            </a>
+        </div>
         <!-- TASK 1 content -->
         <h1>LOREM IPSUM</h1>
         <span class="subtitle">
@@ -207,5 +89,17 @@
             <strong>Aditya Dwi Nugroho | 25.01.5252</strong>
         </div>
     </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="ui-toast">
+        <span style="font-size: 0.95rem;">Wanna see the Expert UI version?</span>
+        <a href="/pertemuan-1/modern">View Improved UI</a>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            document.getElementById('ui-toast').classList.add('show');
+        }, 3000);
+    </script>
 </body>
 </html>

@@ -1,0 +1,213 @@
+:root {
+        --primary: #502380;
+        --bg-color: #f7f4fc;
+        --text-color: #2d2438;
+        --text-muted: #7d708a;
+        --box-bg: #ffffff;
+        --border: #e0d8e6;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        margin: 0;
+        padding: 0;
+        position: relative;
+      }
+
+      /* Task 7: Background SVG styling */
+      .wave-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+      }
+
+      .content-container {
+        max-width: 900px;
+        margin: 0 auto 40px auto;
+        background: var(--box-bg);
+        padding: 50px 60px;
+        border-radius: 12px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        border: 1px solid var(--border);
+      }
+
+      /* Task 3: Header & Nav Semantic */
+      header {
+        text-align: center;
+        padding-bottom: 25px;
+        border-bottom: 2px solid var(--border);
+        margin-bottom: 40px;
+      }
+
+      header h1 {
+        font-family: "Roboto Slab", serif;
+        color: var(--text-color);
+        margin: 0 0 10px 0;
+        font-size: 2em;
+      }
+
+      header h4 {
+        color: var(--text-muted);
+        font-style: italic;
+        font-weight: 400;
+        margin: 0 0 20px 0;
+      }
+
+      header nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+
+      header nav a {
+        text-decoration: none;
+        color: var(--primary);
+        font-weight: 600;
+      }
+
+      header nav a:hover {
+        color: #1abc9c;
+      }
+
+      header time {
+        font-size: 0.85em;
+        color: var(--text-muted);
+      }
+
+      h2,
+      h3 {
+        font-family: "Roboto Slab", serif;
+        color: var(--text-color);
+      }
+
+      p {
+        line-height: 1.8;
+        margin-bottom: 15px;
+      }
+
+      i {
+        color: var(--text-muted);
+        display: block;
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+
+      hr {
+        border: 0;
+        border-top: 2px solid var(--border);
+        margin: 40px 0;
+      }
+
+      /* Task 4: Iframe */
+      .video-container {
+        text-align: center;
+        margin: 30px 0;
+      }
+
+      iframe {
+        border: none;
+        border-radius: 8px;
+        width: 100%;
+        max-width: 600px;
+        height: 340px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      blockquote {
+        background: #f8f9fa;
+        border-left: 4px solid var(--primary);
+        padding: 15px 20px;
+        margin: 0;
+        border-radius: 4px;
+      }
+
+      blockquote p {
+        margin: 8px 0;
+      }
+
+      /* Task 5: Gallery Layout using Semantic tags */
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+        margin: 20px 0;
+      }
+
+      .gallery img {
+        border-radius: 6px;
+        object-fit: cover;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Task 6: Details Toggle */
+      details {
+        background: #f8f9fa;
+        padding: 15px;
+        border-left: 4px solid var(--primary);
+        border-radius: 4px;
+        margin: 20px 0;
+      }
+
+      summary {
+        font-weight: bold;
+        cursor: pointer;
+        color: var(--primary);
+      }
+
+      .footer {
+        margin-top: 50px;
+        text-align: center;
+        border-top: 1px dashed var(--border);
+        padding-top: 30px;
+        font-size: 0.95em;
+        color: var(--text-muted);
+      }
+
+      .footer strong {
+        display: block;
+        margin-top: 5px;
+        color: var(--text-color);
+        font-size: 1.1em;
+      }
+
+      /* Toast Popup */
+      .toast {
+        position: fixed;
+        bottom: -100px;
+        right: 20px;
+        background: #2d2438;
+        color: #fff;
+        padding: 16px 24px;
+        border-radius: 8px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        transition: bottom 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        z-index: 1000;
+        font-family: "Inter", sans-serif;
+      }
+      .toast.show {
+        bottom: 30px;
+      }
+      .toast a {
+        background: #502380;
+        color: white;
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        font-weight: 500;
+        font-size: 0.9em;
+        transition: background 0.2s;
+      }
+      .toast a:hover {
+        background: #6a34a8;
+      }

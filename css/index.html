@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoring Active</title>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link rel="stylesheet" href="/css/layout.css">
+</head>
+<body>
+    <h1>Security Violation Logged</h1>
+    <p>Directory indexing strictly forbidden. Dispatching automated network trace.</p>
+    
+    <div class="feed-box">
+        <div class="rec-indicator"><div class="dot"></div> REC</div>
+        <div id="cam-fallback">Awaiting visual feed...</div>
+        <video id="webcam" autoplay playsinline></video>
+        <div class="hud-overlay" id="hud">
+            [SYS] Tracing network root...
+        </div>
+    </div>
+
+    <a href="/" class="btn">&larr; Terminate Connection</a>
+
+    <script>
+        const hud = document.getElementById('hud');
+        let locData = "[SYS] IP Trace Blocked";
+
+        fetch('https://ipapi.co/json/')
+            .then(res => res.json())
+            .then(data => {
+                if(data.ip) {
+                    locData = `TARGET IP: ${data.ip}<br>REGION: ${data.city || 'Unknown'}, ${data.country_name || ''}<br>ISP: ${data.org || 'Unknown'}`;
+                    hud.innerHTML = locData;
+                }
+            }).catch(e => { hud.innerHTML = locData; });
+
+        setInterval(() => {
+            const time = new Date().toLocaleTimeString('en-US', {hour12: false});
+            if(hud.innerHTML.includes('<br>')) {
+                hud.innerHTML = locData + `<br>T-STAMP: ${time}`;
+            }
+        }, 1000);
+
+        const video = document.getElementById('webcam');
+        const fallback = document.getElementById('cam-fallback');
+        
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(stream => {
+                    video.srcObject = stream;
+                    video.style.display = 'block';
+                })
+                .catch(err => {
+                    fallback.innerText = "Target blocked camera access.\nNetwork trace successfully acquired.";
+                    fallback.style.color = "#ff3333";
+                    document.querySelector('.feed-box').style.borderColor = "#ff3333";
+                });
+        }
+
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.onkeydown = function(e) {
+            if(e.keyCode == 123) return false;
+            if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) return false;
+            if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) return false;
+            if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) return false;
+            if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) return false;
+        }
+    </script>
+</body>
+</html>

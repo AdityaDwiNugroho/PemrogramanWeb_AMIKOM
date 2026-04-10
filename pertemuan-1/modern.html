@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul 1 - Praktikum HTML</title>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/pertemuan-1/css/modern.css">
+</head>
+<body>
+    <div class="dashboard">
+        <div style="grid-column: 1 / -1; margin-bottom: -10px; display: flex; gap: 12px;">
+            <a href="/" style="display: inline-block; background: #fff; color: #4e2079; text-decoration: none; padding: 8px 16px; border: 1px solid #e6e4e3; border-radius: 6px; font-weight: 500; font-size: 0.9rem;">&larr; Back to Home</a>
+            <a href="/pertemuan-1" style="display: inline-block; background: #fff; color: #4e2079; text-decoration: none; padding: 8px 16px; border: 1px solid #e6e4e3; border-radius: 6px; font-weight: 500; font-size: 0.9rem;">Classic UI</a>
+        </div>
+        
+        <!-- Left Column: Theory / Text elements -->
+        <article class="panel">
+            <header class="panel-header">
+                <h1>Modul 1: Typography & Fundamentals</h1>
+            </header>
+            
+            <span class="subtitle">
+                "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
+            </span>
+
+            <h2>Theory: Lorem Ipsum</h2>
+            
+            <h3>What is it?</h3>
+            <p>Lorem ipsum is dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's standard text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+
+            <h3>Why do we use it?</h3>
+            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using lorem ipsum is that it has a more-or-less normal distribution of letters, making it look like readable english.</p>
+
+            <p>The standard chunk of lorem ipsum used:</p>
+            <ul>
+                <li>Since the 1500s is reproduced below for those interested.</li>
+                <li>Sections 1.10.32 and 1.10.33 from "de finibus bonorum et malorum" by cicero are also reproduced in their exact original form,</li>
+                <li>Accompanied by english versions from the 1914 translation by h. Rackham.</li>
+            </ul>
+        </article>
+
+        <!-- Right Column: Practical elements -->
+        <aside class="panel">
+            <header class="panel-header">
+                <h1>Practical Constraints</h1>
+            </header>
+
+            <h2>Media Element</h2>
+            <div class="media-placeholder">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Red_Apple.jpg/200px-Red_Apple.jpg" alt="Apple Placeholder" width="80">
+                <p style="margin: 10px 0 0 0; font-size: 0.8rem; color: #888;">Rendered via &lt;img&gt; tag</p>
+            </div>
+
+            <h2>Tabular Data</h2>
+            
+            <h3>Colspan Architecture:</h3>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th colspan="2">Phone</th>
+                </tr>
+                <tr>
+                    <td>Espio Chameleon</td>
+                    <td>Espio@chameleon.com</td>
+                    <td>123-45</td>
+                    <td>212-00</td>
+                </tr>
+            </table>
+
+            <h3>Rowspan Architecture:</h3>
+            <table>
+                <tr>
+                    <th>Name:</th>
+                    <td>Espio Chameleon</td>
+                </tr>
+                <tr>
+                    <th rowspan="2" valign="top">Phone:</th>
+                    <td>123-45-678</td>
+                </tr>
+                <tr>
+                    <td>212-00-546</td>
+                </tr>
+            </table>
+        </aside>
+
+        <div class="footer-note">
+            &copy; 2026 Praktikum Rekayasa Web - Aditya Dwi Nugroho | 25.01.5252
+        </div>
+
+    </div>
+</body>
+</html>

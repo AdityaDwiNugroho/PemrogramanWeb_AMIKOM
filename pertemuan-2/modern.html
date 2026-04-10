@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Universitas Amikom Yogyakarta - Modul 2</title>
+    <!-- Task 2: Favicon -->
+    <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/pertemuan-2/css/modern.css">
+  </head>
+  <body>
+    <div class="layout-container">
+      <div style="margin-bottom: 16px; display: flex; gap: 12px;">
+        <a href="/" style="display: inline-block; background: #fff; color: #4e2079; text-decoration: none; padding: 8px 16px; border: 1px solid #e6e4e3; border-radius: 6px; font-weight: 500; font-size: 0.9rem;">&larr; Back to Home</a>
+        <a
+          href="/pertemuan-2"
+          style="
+            display: inline-block;
+            background: #fff;
+            color: #4e2079;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid #e6e4e3;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.9rem;
+          "
+          >Classic UI</a
+        >
+      </div>
+
+      <!-- TASK 3: Header Semantic -->
+      <header class="site-header">
+        <div>
+          <h1>Universitas Amikom Yogyakarta</h1>
+          <h4>Creative economy park</h4>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <time class="time-badge" datetime="2022-10-01T11:21:00+02:00"
+          >1 Oct 2022</time
+        >
+      </header>
+
+      <div class="grid-main">
+        <!-- TASK 4: Embed YouTube Video (Full Width Featured) -->
+        <section class="panel panel-full" id="iframe">
+          <h3>Featured Media Overview</h3>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr;
+              gap: 24px;
+              align-items: start;
+            "
+          >
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/GL4ylGm47TM?si=r-xq-0AXM9WQogkx"
+                title="YouTube video player"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div>
+              <blockquote>
+                <p><strong>Iframe Implementation Rules:</strong></p>
+                <p>The HTML iframe tag specifies an inline frame.</p>
+                <p>The src attribute defines the URL of the page to embed.</p>
+                <p>Always include a title attribute (for screen readers).</p>
+              </blockquote>
+            </div>
+          </div>
+        </section>
+
+        <!-- Text & Details Section -->
+        <section class="panel">
+          <h3>Typography & Interaction</h3>
+          <article>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s.
+            </p>
+          </article>
+
+          <!-- TASK 6: Tag Detail -->
+          <div style="margin-top: 24px">
+            <h3>Interactive Element</h3>
+            <details>
+              <summary>View Epcot Description</summary>
+              <p>
+                Epcot is a theme park at walt disney world resort featuring
+                exciting attractions, international pavilions, award-winning
+                fireworks and seasonal special events.
+              </p>
+            </details>
+          </div>
+        </section>
+
+        <!-- TASK 5: Gallery -->
+        <section class="panel">
+          <h3>Image Gallery Layout</h3>
+          <figure class="gallery">
+            <img src="https://picsum.photos/id/237/300/200" alt="gallery 1" />
+            <img src="https://picsum.photos/id/1025/300/200" alt="gallery 2" />
+            <img
+              src="https://picsum.photos/id/1035/300/200"
+              alt="gallery 3"
+              title="agi hariku"
+            />
+            <img src="https://picsum.photos/id/1043/300/200" alt="gallery 4" />
+          </figure>
+        </section>
+      </div>
+
+      <div class="footer-note">
+        &copy; 2026 Praktikum Rekayasa Web - Aditya Dwi Nugroho | 25.01.5252
+      </div>
+    </div>
+  </body>
+</html>

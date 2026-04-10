@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Universitas Amikom Yogyakarta</title>
+    <!-- Task 2: Favicon -->
+    <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto+Slab:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/pertemuan-2/css/style.css?v=2">
+  </head>
+  <body>
+    <!-- Task 7: Make Some Waves (Background) -->
+    <div class="wave-container">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="#502380"
+          fill-opacity="1"
+          d="M0,224L48,208C96,192,192,160,288,154.7C384,149,480,171,576,192C672,213,768,235,864,250.7C960,267,1056,277,1152,261.3C1248,245,1344,203,1392,181.3L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+        ></path>
+      </svg>
+    </div>
+
+    <div class="content-container">
+      <div style="margin-bottom: 20px;">
+        <a href="/" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: var(--primary); font-weight: 600; font-size: 0.95em;">
+            <span>&larr;</span> Back to Home
+        </a>
+      </div>
+      <!-- TASK 3: Header Semantic -->
+      <header>
+        <h1>Universitas Amikom Yogyakarta</h1>
+        <h4>Creative economy park</h4>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a> |</li>
+            <li><a href="#">About</a> |</li>
+            <li><a href="#">Portfolio</a> |</li>
+            <li><a href="#">Site Map</a> |</li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+          <time datetime="2022-10-01T11:21:00+02:00"
+            >Tuesday, 1 October 2022</time
+          >
+        </nav>
+      </header>
+
+      <!-- TASK 1: Typography -->
+      <article>
+        <h2>Lorem Ipsum</h2>
+        <i
+          >"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
+          consectetur, adipisci velit..."<br />
+          "There is no one who loves pain itself, who seeks after it and wants
+          to have it, simply because it is pain..."</i
+        >
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book.
+        </p>
+      </article>
+
+      <hr />
+
+      <!-- TASK 4: Embed YouTube Video -->
+      <section id="iframe">
+        <h3 style="text-align: center">Embed dari youtube</h3>
+        <div class="video-container">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/GL4ylGm47TM?si=r-xq-0AXM9WQogkx"
+            title="YouTube video player"
+            frameborder="0"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <h3>Chapter Summary</h3>
+        <blockquote>
+          <p>The HTML iframe tag specifies an inline frame.</p>
+          <p>The src attribute defines the URL of the page to embed.</p>
+          <p>Always include a title attribute (for screen readers).</p>
+          <p>The height and width attributes specify the size of the iframe.</p>
+          <p>Use border:none; to remove the border around the iframe.</p>
+        </blockquote>
+      </section>
+
+      <hr />
+
+      <!-- TASK 5: Gallery inside Article -->
+      <section>
+        <h3>What is Lorem Ipsum?</h3>
+        <article>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus
+            PageMaker including versions of Lorem Ipsum.
+          </p>
+        </article>
+        <!-- Gallery images -->
+        <figure class="gallery">
+          <img
+            src="https://picsum.photos/id/237/200/200"
+            alt="gallery 1"
+            width="180"
+            height="180"
+          />
+          <img
+            src="https://picsum.photos/id/1025/200/200"
+            alt="gallery 2"
+            width="180"
+            height="180"
+          />
+          <img
+            src="https://picsum.photos/id/1035/200/200"
+            alt="gallery 3"
+            width="180"
+            height="180"
+            title="agi hariku"
+          />
+          <img
+            src="https://picsum.photos/id/1043/200/200"
+            alt="gallery 4"
+            width="180"
+            height="180"
+          />
+        </figure>
+      </section>
+
+      <hr />
+
+      <!-- TASK 6: Tag Detail -->
+      <section>
+        <h3>Menggunakan Tag Detail Untuk Artikel</h3>
+        <details>
+          <summary>detail</summary>
+          <p>
+            epcot is a theme park at walt disney world resort featuring exciting
+            attractions, international pavilions, award-winning fireworks and
+            seasonal special events.
+          </p>
+        </details>
+      </section>
+
+      <div class="footer">
+        &copy; 2025 Praktikum Pemrograman Web<br />
+        <strong>Aditya Dwi Nugroho | 25.01.5252</strong>
+      </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="ui-toast">
+        <span style="font-size: 0.95rem;">Wanna see the Expert UI version?</span>
+        <a href="/pertemuan-2/modern">View Improved UI</a>
+    </div>
+
+    <script>
+      setTimeout(() => {
+        document.getElementById("ui-toast").classList.add("show");
+      }, 3000);
+    </script>
+  </body>
+</html>

@@ -4,27 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tugas Pemrograman Web</title>
+    <link rel="icon" href="/favicon.png" type="image/png">
     <!-- Modern Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root { --bg-color: #f8fafc; --surface-color: #ffffff; --text-primary: #0f172a; --text-secondary: #64748b; --brand-color: #3b82f6; --brand-hover: #2563eb; --border-color: #e2e8f0; --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05); --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); --radius-md: 0.5rem; --radius-lg: 0.75rem; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-primary); display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 2rem; }
-        .container { max-width: 600px; width: 100%; }
-        .header { text-align: center; margin-bottom: 2.5rem; }
-        .header h1 { font-size: 2.25rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem; }
-        .header p { color: var(--text-secondary); font-size: 1.125rem; }
-        .card { background-color: var(--surface-color); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); padding: 2rem; border: 1px solid var(--border-color); }
-        .link-list { display: flex; flex-direction: column; gap: 1rem; list-style: none; }
-        .link-item a { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 1.5rem; background-color: var(--surface-color); border: 1px solid var(--border-color); border-radius: var(--radius-md); color: var(--text-primary); text-decoration: none; font-weight: 500; font-size: 1.125rem; transition: all 0.2s ease; box-shadow: var(--shadow-sm); }
-        .link-item a:hover { border-color: var(--brand-color); transform: translateY(-2px); box-shadow: var(--shadow-md); color: var(--brand-hover); }
-        .icon { color: var(--brand-color); background-color: #eff6ff; padding: 0.5rem; border-radius: 0.375rem; display: flex; align-items: center; justify-content: center; }
-        .arrow { color: var(--text-secondary); transition: transform 0.2s ease; }
-        .link-item a:hover .arrow { color: var(--brand-color); transform: translateX(4px); }
-        .footer { margin-top: 3rem; text-align: center; color: var(--text-secondary); font-size: 0.875rem; }
-        .footer a { color: var(--brand-color); text-decoration: none; }
-        .loading { text-align: center; color: var(--text-secondary); padding: 1rem; }
-    </style>
+    <link rel="stylesheet" href="./css/style.css?v=1">
 </head>
 <body>
     <div class="container">
@@ -37,18 +20,22 @@
             <ul class="link-list" id="directory-list">
                 
                 <li class="link-item">
-                    <a href="Pertemuan Ke 1/index.html">
+                    <a href="pertemuan-1">
                         <div style="display: flex; align-items: center; gap: 1rem;">
-                            <span class="icon">📁</span>
+                            <span class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg>
+                            </span>
                             Pertemuan Ke 1
                         </div>
                         <span class="arrow">➜</span>
                     </a>
                 </li>
                 <li class="link-item">
-                    <a href="Pertemuan Ke 2/index.html">
+                    <a href="pertemuan-2">
                         <div style="display: flex; align-items: center; gap: 1rem;">
-                            <span class="icon">📁</span>
+                            <span class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg>
+                            </span>
                             Pertemuan Ke 2
                         </div>
                         <span class="arrow">➜</span>
@@ -64,7 +51,6 @@
     </div>
 
     <script>
-        // Use Javascript fetch to append NEW directories automatically!
         async function fetchDirectories() {
             const repo = "AdityaDwiNugroho/PemrogramanWeb_AMIKOM"; 
             const apiURL = "https://api.github.com/repos/" + repo + "/contents";
@@ -72,24 +58,30 @@
 
             try {
                 const response = await fetch(apiURL);
-                if (!response.ok) return; // Silent fail if offline
+                if (!response.ok) return;
                 const data = await response.json();
 
-                // Get current folders shown statically to avoid duplicates
                 const existingText = listElement.innerText;
 
                 data.forEach(folder => {
                     if (folder.type === "dir" && !folder.name.startsWith(".")) {
-                        // If it doesn't already exist in the list
-                        if (!existingText.includes(folder.name)) {
-                            const folderPath = encodeURIComponent(folder.name) + "/index.html"; 
+                        let displayName = folder.name;
+                        if (folder.name.startsWith("pertemuan-")) {
+                            const num = folder.name.split("-")[1];
+                            displayName = "Pertemuan Ke " + num;
+                        }
+
+                        if (!existingText.includes(displayName)) {
+                            const folderPath = encodeURIComponent(folder.name); 
                             const li = document.createElement("li");
                             li.className = "link-item";
                             li.innerHTML = `
                                 <a href="${folderPath}">
                                     <div style="display: flex; align-items: center; gap: 1rem;">
-                                        <span class="icon">📁</span>
-                                        ${folder.name}
+                                        <span class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg>
+                                        </span>
+                                        ${displayName}
                                     </div>
                                     <span class="arrow">➜</span>
                                 </a>
@@ -105,6 +97,16 @@
         }
 
         document.addEventListener("DOMContentLoaded", fetchDirectories);
+
+        // Anti-Inspection / Reverse Engineering Protection
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.onkeydown = function(e) {
+            if(e.keyCode == 123) return false;
+            if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) return false;
+            if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) return false;
+            if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) return false;
+            if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) return false;
+        }
     </script>
 </body>
 </html>
